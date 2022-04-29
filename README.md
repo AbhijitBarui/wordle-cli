@@ -26,3 +26,9 @@ By Abhijit Barui            Ph: +91-8335076174              email: abhijitongit@
         It means my imported module isn't recognising the variables(Visibility of global variables in imported modules)
 
         •Learned about enumerate() method while facing indexing error(presence of duplicate is ignored and index of first duplicate is always taken into account). Solved.
+
+# Features to be implemented:
+        The game could be made more customizable by introducing game mode of 4 letters, 6 letters and 7 letters as well.
+        Similarly a difficulty level where we can seperate the wordlist in three sections easy, medium and hard and present user a choice(using data from https://www.english-corpora.org/coca/).
+        While talking about difficulty adjustment user may also be given an option to change the number of attempts.
+        Also as CLI(Command Line Interface) is not very user friendly compared to the advancements in GUI(Graphical user interface) these days, we can implement the project with a little bit of javascript and with some prior knowledge of django-framework I can host it as a webapplication where users will be able to play it comfortably even in their smartphones.
