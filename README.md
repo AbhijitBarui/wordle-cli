@@ -1,44 +1,28 @@
-# wordle-cli
+# WORDLE CLI VERSION (Python) - 
+# Assignment Submission related to the post of Associate Software Developer @ Coditation Systems 
+By Abhijit Barui            Ph: +91-8335076174              email: abhijitongit@gmail.com
 
-how game works?
+# Description:
+        This project is based on the popular game called Wordle. The goal is to guess a 5 letter word and one is given a certain number of attempts(6). Whenever one makes a guess, all those letters in the guess that also appears in the correct answer are highlighted, if they are in the right spot they are highlighted seperately. 
 
-you will be given 6 chances
-you have to enter a valid 5-letter word each try
-you will be informed each time whether the letters in the word-
-> highlight1 if letter is in correct place
-> highlight2 if letter is is word but not in correct place
-> highlight3 if letter is not in word
+# requirements
+        Python programming language installed in the desktop environment
+        Terminal
 
-algorithm:
+# how-to-play:
+        To play this game first you have to navigate to wordle.py after cloning this repository
+        (../clone_folder/wordle-cli/wordle.py) and then run ~$ /bin/python3 wordle.py
+        the game should be up and working perfectly. Type in your attempts in the terminal and press enter key.
 
-resources needed:
-wordlist
+# Challenges faced while making this:
+        •First challenge was to read the text file of words and form a list of words. Learnt about pyhon file handling    methods as well as single-line return statement while completing this task.
 
-procedure:
-start game
-take one random word as answer from wordlist
-take input of a 5 letter word call it sample
-break the answer and sample into arrays
-perform checks(detailed below)
-provide necessary highlights to letters and make output
-if correct word then celebrate
-if not then continue next step till sixth attempt
-stop game
+        •While working with the highlighter I learned more about iterating methods through dictionary in python(used to scan highlight dictionaries and replace the letters with highlighted characters).
 
-checks:
-two arrays arr_sample_x (x refers to xth trial) and arr_answer made up
-of the letters of the words sample_x and answer respectively
-check_1: check of same words: whether the words are same
-check_2: check of same letters: whether there are common letters or not
-check_2_1: if common letters: extract common letters
-check_2_2: if not common letters: highlight all with H3 and print results breakloop then continue
-check_3: if common letters are in correct places
-check_3_1: if in correct place: highlight them with H1
-check_3_2: if not in correct place: highlight them with H2
-check_3_3: highlight rest with H3 print results then continue
+        •While facing list of emotes to be served as a dict I learned about the zip() and dict() methods to use two list of keys and values respectively and create a python dictionary.
 
+        •After creating utility module(utils.py) and moving functions over there, I faced error: 
+        NameError: name 'h3' is not defined
+        It means my imported module isn't recognising the variables(Visibility of global variables in imported modules)
 
-
-input="space"
-ans="sweet"
-output=s[h1] p[h3] a[h3] c[h3] e[h2]
+        •Learned about enumerate() method while facing indexing error(presence of duplicate is ignored and index of first duplicate is always taken into account). Solved.

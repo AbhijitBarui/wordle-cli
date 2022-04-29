@@ -21,7 +21,10 @@ for attempt in range(attempt_count):
         print("correct guess, you WON!! Thanks for playing")
         break
     if len(sample) == 5: #check to see whether the entered string is of length 5
-        print(wordleChecker(word_answer, sample, h1, h2, h3))
+        if sample.upper() in words_checker:
+            print(wordleChecker(word_answer, sample, h1, h2, h3))
+        else:
+            print("not a valid word")
     elif sample.lower() == 'help': #help command
         print(help_text)
     else:
