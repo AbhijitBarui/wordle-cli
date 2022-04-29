@@ -12,41 +12,48 @@ word_answer = random.choice(words_dict)
 
 wordleflag = False
 attempt_count = 6
-H1 = "👍" #highlight1
-H2 = "✋" #highlight2
-H3 = "👎" #highlight3
+H1 = "✅" #highlight1
+H2 = "🔄" #highlight2
+H3 = "❌" #highlight3
 
 
 def wordleChecker(arrans: Array, arrsam: Array):
     wordle_return=[]
-    for ltr1 in arrsam:
-        for ltr2 in arrans:
+    wordle_word = ""
+    for idx1, ltr1 in enumerate(arrsam):
+        wordle_return.append(ltr1)
+        for idx2,ltr2 in enumerate(arrans):
             if ltr1 == ltr2: #H1/H2 filter
-                if arrans.index(ltr1) == arrsam.index(ltr2): #check_3_1: H1 filter
-                    print(f'{ltr1} {H1}')
+                if idx1 == idx2: #check_3_1: H1 filter
+                    wordle_return.append(H1)
+                    arrans.pop(idx2)
+                    arrans.insert(idx2,'%')
                     break
                 else:
-                    print(f"{ltr1} {H2}")
+                    wordle_return.append(H2)
                     break
             if ltr1 not in arrans:
-                print(f"{ltr1} {H3}")
+                wordle_return.append(H3)
                 break
-    return wordle_return
+    even_count = 0
+    for wordle_letters in wordle_return:
+        wordle_word+=str(wordle_letters) + "   "
 
-while wordleflag == False:
-    for attempt in range(attempt_count):
-        sample = input(f'attempt no. {attempt + 1}, enter the word: ')
+    return wordle_word
+
+print(word_answer)
+for attempt in range(attempt_count):
+    sample = input(f'attempt no. {attempt + 1}, enter the word: ')
+    if sample.upper()==word_answer:
+        print("correct guess")
+        break
+    if len(sample) == 5:
         #check 1 check of same words: whether the words are same
-        if sample == word_answer:
-            print("you guessed it right")
-            wordleflag = True
-            break
-        else:
-            #check 2 check of same letters: whether there are common letters or not
-            arr_answer = list(word_answer.upper())
-            arr_sample = list(sample.upper())
-            wordleChecker(arr_answer, arr_sample)
-        if attempt == 5:
+        arr_answer = list(word_answer.upper())
+        arr_sample = list(sample.upper())
+        print(wordleChecker(arr_answer, arr_sample))
+    else:
+        print("less than 5 letters")
+    if attempt == 5:
             wordleflag = True
             print(f'answer is {word_answer}')
-

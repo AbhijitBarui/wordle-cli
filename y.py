@@ -12,35 +12,32 @@ word_answer = random.choice(words_dict)
 
 wordleflag = False
 attempt_count = 6
-H1 = "✅" #highlight1
-H2 = "🔄" #highlight2
-H3 = "❌" #highlight3
+H1 = "👍" #highlight1
+H2 = "✋" #highlight2
+H3 = "👎" #highlight3
 
 
 def wordleChecker(arrans: Array, arrsam: Array):
     wordle_return=[]
     for ltr1 in arrsam:
-        wordle_return.append(ltr1)
         for ltr2 in arrans:
-            wordle_return.append(ltr2)
             if ltr1 == ltr2: #H1/H2 filter
                 if arrans.index(ltr1) == arrsam.index(ltr2): #check_3_1: H1 filter
-                    wordle_return.append(arrsam.index(ltr2))
-                    wordle_return.append(arrans.index(ltr1))
+                    wordle_return.append(ltr1)
                     wordle_return.append(H1)
                     break
                 else:
-                    wordle_return.append(arrsam.index(ltr2))
-                    wordle_return.append(arrans.index(ltr1))
+                    wordle_return.append(ltr1)
                     wordle_return.append(H2)
                     break
             if ltr1 not in arrans:
+                wordle_return.append(ltr1)
                 wordle_return.append(H3)
                 break
     wordle_word = ""
     even_count = 0
-    # for wordle_letters in wordle_return:
-    #     wordle_word+=wordle_letters + "   "
+    for wordle_letters in wordle_return:
+        wordle_word+=wordle_letters + "   "
 
     print(f'answer is {word_answer}')
     return wordle_return
