@@ -17,11 +17,16 @@ lets begin!!
 '''
 
 #dictionary loader function
-def load_dict(file_name):
+def load_dict(file_name, r, flg="Foo"):
     file = open(file_name)
     words = file.readlines()
     file.close()
-    return [word[:5].upper() for word in words]
+    if flg.lower() == "u":
+        return [word[:r].upper() for word in words]
+    elif flg.lower() == "l":
+        return [word[:r].lower() for word in words]
+    else:
+        return [word[:r] for word in words]
 
 
 #highlighter function

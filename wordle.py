@@ -1,14 +1,28 @@
 import random
-from highlights import h1, h2, h3
 from utils import help_text, load_dict, highlighter, wordleChecker
 
 #introductory text
 print(help_text)
 
 #loading arrays for word checking and answer selecting
-words_dict = load_dict("wordle_words.txt")
-words_checker = load_dict("wordle_words.txt")
+words_dict = load_dict("wordle_words.txt", 5, 'u')
+words_checker = load_dict("wordle_words.txt", 5, 'u')
 word_answer = random.choice(words_dict)
+
+#loading arrays for highlighter
+h0_list = load_dict('h0.txt', 1)
+h1_list = load_dict('h1.txt', 1)
+h2_list = load_dict('h2.txt', 1)
+h3_list = load_dict('h3.txt', 1)
+
+#merging lists into dict
+zip_iter_1 = zip(h0_list,h1_list)
+zip_iter_2 = zip(h0_list,h2_list)
+zip_iter_3 = zip(h0_list,h3_list)
+
+h1 = dict(zip_iter_1)
+h2 = dict(zip_iter_2)
+h3 = dict(zip_iter_3)
 
 #attempt count
 attempt_count = 6
