@@ -41,4 +41,4 @@ check_3_3: highlight rest with H3 print results then continue
 
 input="space"
 ans="sweet"
-output=s[1] p[3] a[3] c[3] e[2]
+output=s[h1] p[h3] a[h3] c[h3] e[h2]
