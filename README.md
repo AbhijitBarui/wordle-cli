@@ -10,6 +10,7 @@ you will be informed each time whether the letters in the word-
 > highlight3 if letter is not in word
 
 algorithm:
+
 resources needed:
 wordlist
 
