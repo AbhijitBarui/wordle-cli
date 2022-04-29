@@ -11,7 +11,7 @@ By Abhijit Barui            Ph: +91-8335076174              email: abhijitongit@
 
 # how-to-play:
         To play this game first you have to navigate to wordle.py after cloning this repository
-        (../clone_folder/wordle-cli/wordle.py) and then run ~$ /bin/python3 wordle.py
+        (../clone_folder/wordle-cli/wordle.py) and then run the file wordle.py (~$ /bin/python3 wordle.py)
         the game should be up and working perfectly. Type in your attempts in the terminal and press enter key.
 
 # Challenges faced while making this:
